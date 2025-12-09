@@ -42,3 +42,6 @@ offset_right = 2334.0
 offset_bottom = 694.0
 texture = ExtResource("4_fsvxu")
 stretch_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(987, 624)
