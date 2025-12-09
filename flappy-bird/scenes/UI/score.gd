@@ -19,6 +19,8 @@ func _ready() -> void:
 
 func scoreAdd():
 	var num = Global.score
+	if num > 99:
+		num = 99
 	if len(str(num)) == 1:
 		$"1".texture = scores[0]
 		$"2".texture = scores[num]
