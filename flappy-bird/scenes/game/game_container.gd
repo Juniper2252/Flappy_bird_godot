@@ -25,6 +25,7 @@ func _input(event: InputEvent) -> void:
 		if gamePause:
 			if gameLost:
 				get_tree().reload_current_scene()
+				Global.score = 0
 			else:
 				$Sprite2D2.visible = false
 				get_tree().paused = false
