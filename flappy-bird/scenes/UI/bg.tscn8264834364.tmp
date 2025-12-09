@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctdawmrhriqr"]
+
+[ext_resource type="Texture2D" uid="uid://dt8nswxetie0n" path="res://assets/flappy-bird-assets-master/sprites/background-day.png" id="2_thvpv"]
+[ext_resource type="Texture2D" uid="uid://ch5a1qtolacko" path="res://assets/flappy-bird-assets-master/sprites/base.png" id="4_fsvxu"]
+
+[sub_resource type="GDScript" id="GDScript_ny6lb"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	Global.die.connect(hi)
+
+
+
+func hi():
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="bg" type="Node2D"]
+script = SubResource("GDScript_ny6lb")
+
+[node name="bg" type="TextureRect" parent="."]
+z_index = -1
+offset_left = -1.0
+offset_top = 95.0
+offset_right = 1151.0
+offset_bottom = 607.0
+texture = ExtResource("2_thvpv")
+stretch_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="bg"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -94.0
+offset_right = 1152.0
+offset_bottom = 72.0
+color = Color(0.30588236, 0.7529412, 0.7921569, 1)
+
+[node name="Node2D" type="Node2D" parent="."]
+z_index = 3
+
+[node name="TextureRect2" type="TextureRect" parent="Node2D"]
+offset_left = -18.0
+offset_top = 582.0
+offset_right = 1158.0
+offset_bottom = 694.0
+texture = ExtResource("4_fsvxu")
+stretch_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="Node2D"]
+offset_left = 1158.0
+offset_top = 582.0
+offset_right = 2334.0
+offset_bottom = 694.0
+texture = ExtResource("4_fsvxu")
+stretch_mode = 1

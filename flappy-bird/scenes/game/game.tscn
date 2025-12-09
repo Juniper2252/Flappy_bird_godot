@@ -1,3 +1,29 @@
-[gd_scene format=3 uid="uid://b718ohfjpfjhj"]
+[gd_scene load_steps=5 format=3 uid="uid://b718ohfjpfjhj"]
+
+[ext_resource type="PackedScene" uid="uid://ck044erbeluna" path="res://scenes/bird/bird.tscn" id="1_sul5r"]
+[ext_resource type="PackedScene" uid="uid://c7cc6iyv46x8e" path="res://scenes/pipes/pipe_spawner.tscn" id="2_7h61r"]
+[ext_resource type="PackedScene" uid="uid://ctdawmrhriqr" path="res://scenes/UI/bg.tscn" id="3_0sr1o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0sr1o"]
+size = Vector2(1173, 20)
 
 [node name="Game" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="Bird" parent="." instance=ExtResource("1_sul5r")]
+z_index = 5
+position = Vector2(67, 322)
+
+[node name="pipeSpawner" parent="." instance=ExtResource("2_7h61r")]
+
+[node name="terrain" type="Node" parent="."]
+
+[node name="bg" parent="terrain" instance=ExtResource("3_0sr1o")]
+
+[node name="floor" type="Area2D" parent="terrain" groups=["damage"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="terrain/floor"]
+position = Vector2(568.5, 593)
+shape = SubResource("RectangleShape2D_0sr1o")

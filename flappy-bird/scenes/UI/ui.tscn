@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbhdg20n7nm5v"]
+
+[ext_resource type="Script" uid="uid://bd54ibobwliwp" path="res://scenes/UI/score.gd" id="1_yb1mt"]
+[ext_resource type="Texture2D" uid="uid://0u2q1mvupspc" path="res://assets/flappy-bird-assets-master/sprites/0.png" id="2_41gti"]
+
+[node name="UI" type="Node2D"]
+z_index = 10
+script = ExtResource("1_yb1mt")
+
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(-28, -2)
+texture = ExtResource("2_41gti")
+
+[node name="2" type="Sprite2D" parent="."]
+position = Vector2(24, -2)
+texture = ExtResource("2_41gti")

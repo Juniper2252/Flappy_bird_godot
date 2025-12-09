@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5rieefgifyfl"]
+
+[ext_resource type="Script" uid="uid://btb8wujdu63u5" path="res://scenes/game/game_container.gd" id="1_w4g24"]
+[ext_resource type="Texture2D" uid="uid://pse2aiwk4fay" path="res://assets/flappy-bird-assets-master/sprites/gameover.png" id="2_1ats3"]
+[ext_resource type="Texture2D" uid="uid://ch38x0gwnunea" path="res://assets/flappy-bird-assets-master/sprites/message.png" id="3_w4g24"]
+[ext_resource type="PackedScene" uid="uid://dbhdg20n7nm5v" path="res://scenes/UI/ui.tscn" id="4_d3xc8"]
+
+[node name="GameContainer" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_w4g24")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+z_index = 10
+position = Vector2(555, 305)
+scale = Vector2(2.425, 2.425)
+texture = ExtResource("2_1ats3")
+
+[node name="gameClass" type="Node2D" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(561, 310)
+scale = Vector2(1.87, 1.87)
+texture = ExtResource("3_w4g24")
+
+[node name="UI" parent="." instance=ExtResource("4_d3xc8")]
+visible = false
+position = Vector2(559, 26)
