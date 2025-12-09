@@ -21,18 +21,10 @@ func gameOver():
 	gameLost = true
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("inp"):
 		if gamePause:
 			if gameLost:
-				for i in $gameClass.get_children():
-					i.queue_free()
-				gameLost = false
-				Global.score = 0
-				var instance = game.instantiate()
-				instance.process_mode = Node.PROCESS_MODE_PAUSABLE
-				$gameClass.add_child(instance)
-				$Sprite2D.visible = false
-				get_tree().paused = false
+				get_tree().reload_current_scene()
 			else:
 				$Sprite2D2.visible = false
 				get_tree().paused = false

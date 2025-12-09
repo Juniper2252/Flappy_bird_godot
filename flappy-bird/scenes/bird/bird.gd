@@ -12,7 +12,7 @@ func fly(delta):
 	dir += get_gravity() * delta * 1.5
 	rotation= dir.angle()
 	velocity.y = dir.y
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("inp"):
 		dir = Vector2(speed,-speed)
 
 	move_and_slide()
@@ -48,4 +48,4 @@ func _on_detector_area_entered(area: Area2D) -> void:
 	elif area.is_in_group("score"):
 		Global.score += 1
 		Global.Score.emit()
-		print(Global.score)
+	
